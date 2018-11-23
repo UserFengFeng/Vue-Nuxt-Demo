@@ -60,14 +60,9 @@
         </el-menu>
       </el-col>
       <el-col
-        :xs="20"
-        :sm="20"
-        :md="20"
         :lg="20">
         <el-breadcrumb>
-          <el-breadcrumb-item>
-            <nuxt/>
-          </el-breadcrumb-item>
+          <nuxt/>
         </el-breadcrumb>
       </el-col>
     </el-row>
