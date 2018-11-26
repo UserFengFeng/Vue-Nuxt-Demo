@@ -1,12 +1,21 @@
 <template>
   <ul class="todo-main">
-    <todo-item />
+    <todo-item
+      v-for="(todo, index) in todos"
+      :key="index"
+      :todo="todo"
+    />
   </ul>
 </template>
 
 <script>
 import TodoItem from './TodoItem.vue'
 export default {
+  props: {
+    todos: {
+      type: Array
+    }
+  },
   components: {
     TodoItem
   },

@@ -2,7 +2,7 @@
   <div class="todo-container">
     <div class="todo-wrap">
       <todo-header />
-      <todo-list />
+      <todo-list :todos="todos" />
       <todo-footer />
     </div>
   </div>
@@ -17,10 +17,19 @@ export default {
     TodoHeader,
     TodoList,
     TodoFooter
+  },
+
+  data() {
+    return {
+      todos: [
+        { title: '吃饭', complete: false },
+        { title: '睡觉', complete: true },
+        { title: '打豆豆', complete: false }
+      ]
+    }
   }
 }
 </script>
-
 
 <style>
 /*base*/
