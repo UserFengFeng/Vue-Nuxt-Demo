@@ -1,10 +1,7 @@
 <template>
   <ul class="todo-main">
-    <todo-item
-      v-for="(todo, index) in todos"
-      :key="index"
-      :todo="todo"
-    />
+    <todo-item v-for="(todo, index) in todos" :key="index" :todo="todo" :index="index" :deleteTodos="deleteTodos" />
+    <h4 v-show="todos.length === 0">暂无数据</h4>
   </ul>
 </template>
 
@@ -12,9 +9,8 @@
 import TodoItem from './TodoItem.vue'
 export default {
   props: {
-    todos: {
-      type: Array
-    }
+    todos: Array,
+    deleteTodos: Function
   },
   components: {
     TodoItem

@@ -2,12 +2,13 @@
   <div>
     <el-row class="tac">
       <el-col :span="12">
-        <el-menu
-          default-active="$route.path"
-          class="el-menu-vertical-demo"
-          router
-          @open="handleOpen"
-          @close="handleClose">
+        <el-menu default-active="$route.path" class="el-menu-vertical-demo" router @open="handleOpen" @close="handleClose">
+
+          <el-menu-item index="/">
+            <i class="el-icon-menu"></i>
+            <span slot="title">首页</span>
+          </el-menu-item>
+
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location" />
@@ -18,7 +19,7 @@
             </el-menu-item-group>
           </el-submenu>
 
-          <el-submenu index="/TwoInterface/twointerface">
+          <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-menu" />
               <span>导航二</span>
@@ -59,14 +60,13 @@
           </el-submenu>
         </el-menu>
       </el-col>
-      <el-col
-        :lg="20">
+      <el-col :lg="20">
         <el-breadcrumb>
-          <nuxt/>
+          <nuxt />
         </el-breadcrumb>
       </el-col>
     </el-row>
-   
+
   </div>
 </template>
 
