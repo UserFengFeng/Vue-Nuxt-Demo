@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="site-header jumbotron">
+    <!-- <header class="site-header jumbotron">
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
@@ -15,7 +15,8 @@
       <list
         :comments="comments"
         :deleteComment="deleteComment" />
-    </div>
+    </div> -->
+    OneInterContent
   </div>
 </template>
 <script>
