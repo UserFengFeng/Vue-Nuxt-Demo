@@ -22,8 +22,3 @@ export default {
   props: ['comments', 'deleteComment']
 }
 </script>
-<style>
-.reply {
-  margin-top: 0px;
-}
-</style>
