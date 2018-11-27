@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import TodoHeader from '../../components/TwoInterContent/TodoHeader.vue'
-import TodoList from '../../components/TwoInterContent/TodoList.vue'
-import TodoFooter from '../../components/TwoInterContent/TodoFooter.vue'
+import TodoHeader from '../components/TwoInterContent/TodoHeader.vue'
+import TodoList from '../components/TwoInterContent/TodoList.vue'
+import TodoFooter from '../components/TwoInterContent/TodoFooter.vue'
 export default {
   components: {
     TodoHeader,

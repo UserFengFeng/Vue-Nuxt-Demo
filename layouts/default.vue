@@ -1,84 +1,21 @@
 <template>
   <div>
     <el-row class="tac">
-      <el-col :span="12">
-        <el-menu default-active="$route.path" class="el-menu-vertical-demo" router @open="handleOpen" @close="handleClose">
-
-          <el-menu-item index="/">
-            <i class="el-icon-menu"></i>
-            <span slot="title">首页</span>
-          </el-menu-item>
-
-          <el-submenu index="1">
-            <template slot="title">
-              <i class="el-icon-location" />
-              <span>导航一</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/OneInterface/oneinterface">选项1.1</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-
-          <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-menu" />
-              <span>导航二</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/TwoInterface/twointerface">选项2.1</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-
-          <el-submenu index="3">
-            <template slot="title">
-              <i class="el-icon-document" />
-              <span>导航三</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/ThreeInterface/threeinterface">选项3.1</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-
-          <el-submenu index="4">
-            <template slot="title">
-              <i class="el-icon-setting" />
-              <span>导航四</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/FourInterface/fourinterface">选项4.1</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-
-          <el-submenu index="5">
-            <template slot="title">
-              <i class="el-icon-info" />
-              <span>导航五</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/FiveInterface/fiveinterface">选项5.1</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-        </el-menu>
-      </el-col>
+      <Menu />
       <el-col :lg="20">
         <el-breadcrumb>
           <nuxt />
         </el-breadcrumb>
       </el-col>
     </el-row>
-
   </div>
 </template>
 
 <script>
+import Menu from '../components/Menu.vue'
 export default {
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath)
-    }
+  components: {
+    Menu
   }
 }
 </script>
@@ -130,8 +67,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
-.el-col-12 {
-  width: 11%;
 }
 </style>

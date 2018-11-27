@@ -20,8 +20,8 @@
   </div>
 </template>
 <script>
-import Add from '../../components/OneInterContent/Add.vue'
-import List from '../../components/OneInterContent/List.vue'
+import Add from '../components/OneInterContent/Add.vue'
+import List from '../components/OneInterContent/List.vue'
 export default {
   components: {
     Add,
