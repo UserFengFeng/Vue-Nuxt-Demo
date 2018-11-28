@@ -20,6 +20,7 @@
     <el-table-column
       label="端口"
       prop="port"
+      sortable
     >
     </el-table-column>
 
@@ -32,12 +33,14 @@
     <el-table-column
       label="开始时间"
       prop="startDate"
+      sortable
     >
     </el-table-column>
 
     <el-table-column
       label="结束时间"
       prop="endDate"
+      sortable
     >
     </el-table-column>
   </el-table>
