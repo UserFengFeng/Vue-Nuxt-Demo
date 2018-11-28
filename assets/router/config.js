@@ -10,7 +10,8 @@ export default [
     children: [
       {
         name: '选项一',
-        templete: '/oneInterface'
+        templete: '/oneInterface',
+        icon: 'el-icon-menu'
       }
     ]
   },
@@ -20,7 +21,8 @@ export default [
     children: [
       {
         name: '选项一',
-        templete: '/twoInterface'
+        templete: '/twoInterface',
+        icon: 'el-icon-menu'
       }
     ]
   },
@@ -30,7 +32,8 @@ export default [
     children: [
       {
         name: '选项一',
-        templete: '/ThreeInterface/threeInterface'
+        templete: '/ThreeInterface/threeInterface',
+        icon: 'el-icon-menu'
       }
     ]
   },
@@ -40,7 +43,8 @@ export default [
     children: [
       {
         name: '选项一',
-        templete: '/fourInterface'
+        templete: '/fourInterface',
+        icon: 'el-icon-menu'
       }
     ]
   },
@@ -50,7 +54,8 @@ export default [
     children: [
       {
         name: '选项一',
-        templete: '/fiveInterface'
+        templete: '/fiveInterface',
+        icon: 'el-icon-menu'
       }
     ]
   }

@@ -1,114 +1,80 @@
 <template>
-  <div class="shutter">
-    <div class="shutter-img">
-      <a href="#" data-shutter-title="Iron Man"><img src="images/shutter_1.jpg" alt="#"></a>
-      <a href="#" data-shutter-title="Super Man"><img src="images/shutter_2.jpg" alt="#"></a>
-      <a href="#" data-shutter-title="The Hulk"><img src="images/shutter_3.jpg" alt="#"></a>
-      <a href="#" data-shutter-title="The your"><img src="images/shutter_4.jpg" alt="#"></a>
-    </div>
-    <ul class="shutter-btn">
-      <li class="prev"></li>
-      <li class="next"></li>
-    </ul>
-    <div class="shutter-desc">
-      <p>Iron Man</p>
-    </div>
-  </div>
+  <el-table
+    :data="tabledata"
+    style="width: 100%"
+  >
+    <el-table-column type="expand">
+      <template slot-scope="props">
+        <el-form
+          label-position="left"
+          inline
+          class="demo-table-expand"
+        >
+          <el-form-item label="描述">
+            <span>{{ props.row.comment }}</span>
+          </el-form-item>
+        </el-form>
+      </template>
+    </el-table-column>
+
+    <el-table-column
+      label="端口"
+      prop="port"
+    >
+    </el-table-column>
+
+    <el-table-column
+      label="密码"
+      prop="password"
+    >
+    </el-table-column>
+
+    <el-table-column
+      label="开始时间"
+      prop="startDate"
+    >
+    </el-table-column>
+
+    <el-table-column
+      label="结束时间"
+      prop="endDate"
+    >
+    </el-table-column>
+  </el-table>
 </template>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/velocity.js"></script>
-<script src="js/shutter.js"></script>
 <script>
+import moment from 'moment'
 export default {
+  props: {
+    tabledata: {
+      type: Array,
+      default: null
+    }
+  },
   data() {
     return {
     }
+  },
+  created() {
+    this.tabledata.map(item => {
+      item.startDate = moment(item.startDate).format('YYYY-MM-DD')
+      item.endDate = moment(item.endDate).format('YYYY-MM-DD')
+    })
   }
 }
 </script>
-
 <style>
-* {
-  margin: 0;
-  padding: 0;
+.demo-table-expand {
+  font-size: 0;
 }
-body {
-  background-color: #333333;
+.demo-table-expand label {
+  width: 90px;
+  color: #99a9bf;
 }
-img {
-  border: 0;
-  vertical-align: top;
-}
-ul,
-li {
-  list-style: none;
-}
-
-.shutter {
-  overflow: hidden;
-  width: 1000px;
-  height: 358px;
-  position: relative;
-  margin: 50px auto;
-  border-radius: 10px;
-}
-.shutter-img {
-  z-index: 1;
-}
-.shutter-img,
-.shutter-img a {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.shutter-img a {
-  cursor: default;
-}
-.shutter-img a > img {
-  width: 100%;
-  height: 100%;
-}
-.shutter-img .created {
-  overflow: hidden;
-  position: absolute;
-  z-index: 20;
-}
-.shutter-btn {
-}
-.shutter-btn li {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  width: 49px;
-  height: 49px;
-  margin-top: -25px;
-  cursor: pointer;
-}
-.shutter-btn li.prev {
-  left: 20px;
-  background: url(../images/shutter_prevBtn.png) no-repeat 0 -49px;
-}
-.shutter-btn li.next {
-  right: 20px;
-  background: url(../images/shutter_nextBtn.png) no-repeat 0 -49px;
-}
-.shutter-desc {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 36px;
-  background: url(../images/shutter_shadow.png) repeat;
-}
-.shutter-desc p {
-  padding-left: 20px;
-  line-height: 36px;
-  color: #fff;
-  font-size: 14px;
+.demo-table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 50%;
 }
 </style>
-

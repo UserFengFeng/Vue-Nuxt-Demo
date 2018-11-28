@@ -1,27 +1,32 @@
 <template>
-  <div class="shutter">
-    <div class="shutter-img">
-      <a href="#" data-shutter-title="Iron Man"><img src="./images/shutter_1.jpg" alt="#"></a>
-      <a href="#" data-shutter-title="Super Man"><img src="./images/shutter_2.jpg" alt="#"></a>
-      <a href="#" data-shutter-title="The Hulk"><img src="./images/shutter_3.jpg" alt="#"></a>
-      <a href="#" data-shutter-title="The your"><img src="./images/shutter_4.jpg" alt="#"></a>
-    </div>
-    <ul class="shutter-btn">
-      <li class="prev"></li>
-      <li class="next"></li>
-    </ul>
-    <div class="shutter-desc">
-      <p>Iron Man</p>
-    </div>
+  <div class="">
+    <three-inter-content :tabledata="tabledata" />
   </div>
 </template>
 
-<script src="./js/jquery.min.js"></script>
-<script src="./js/velocity.js"></script>
-<script src="./js/shutter.js"></script>
 <script>
-import './css/shutter.css'
-export default {
+import axios from 'axios'
+import moment from 'moment'
+import ThreeInterContent from '~/components/ThreeInterContent/index.vue'
 
+export default {
+  components: {
+    ThreeInterContent
+  },
+  data() {
+    return {
+      tabledata: [],
+    }
+  },
+  created() {
+    axios
+      .get('https://gist.githubusercontent.com/JoshuaYang/37ed2ca102efe190315c94b695e5833e/raw/136ea13c39867b40757625ddd99714f66ff89a13/fakeData.json')
+      .then(response => {
+        this.tabledata = response.data.list
+      })
+
+  }
 }
 </script>
+<style>
+</style>
